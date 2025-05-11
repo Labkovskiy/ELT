@@ -1,4 +1,6 @@
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,17 @@ import java.time.Duration;
 
 
 public class MainTest {
+    WebDriver driver ;
+    @BeforeEach
+    void start(){
+        driver = new ChromeDriver();
+    }
+
+    @AfterEach
+    void teardown (){
+        driver.quit();
+    }
+
       @Test
        void FirstTest () throws InterruptedException {
 
@@ -55,5 +68,6 @@ public class MainTest {
 
             driver.quit();
       }
+
 
 }
